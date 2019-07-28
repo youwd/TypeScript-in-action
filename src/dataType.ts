@@ -13,3 +13,14 @@ obj1.x = 2;
 
 // symbol
 let i: symbol = Symbol();
+
+
+// 枚举类型
+enum Role {
+    GUESS,
+    REPORT,
+}
+enum G {a,b}
+enum E {a = 1,b = 2}
+
+console.log(Role.GUESS);
