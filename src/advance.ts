@@ -50,11 +50,20 @@ let ad1 = {
 function getValue(obj: any, keys: string[]) {
     return keys.map(key => obj[key]);
 }
-function getValueT<T, K extends keyof T > (obj:T, keys: K[]): T[K][] {
+function getValueT<T, K extends keyof T>(obj: T, keys: K[]): T[K][] {
     return keys.map(key => obj[key]);
 }
 console.log(getValue(ad1, ["a", "b", "q"]));
 // console.log(getValueT(ad1, ["a", "b", "q"]));  // 会报错
 
 // 映射类型
+interface Obj2 {
+    a: string,
+    b: number,
+    c: boolean
+}
+type ReadonlyObj = Readonly<Obj2>;
+type PickObj = Pick<Obj2, "a" | "b">;
+type RecordObj = Record<'a' | 'b', Obj2>
 
+// 条件类型
