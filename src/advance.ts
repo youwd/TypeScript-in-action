@@ -28,12 +28,12 @@ enum Master {
     boy,
     girl
 }
-function getPet(master:Master){
-    let pet = master===Master.boy?new DogAdvanceClass(): new CatAdvanceClass();
+function getPet(master: Master) {
+    let pet = master === Master.boy ? new DogAdvanceClass() : new CatAdvanceClass();
     pet.eat();  // 联合类型  只能访问共有方法
 
     let pet1;
-    if(master===Master.boy){
+    if (master === Master.boy) {
         pet1 = new DogAdvanceClass();
         pet1.run();
     }
@@ -41,4 +41,20 @@ function getPet(master:Master){
 }
 console.log(111);
 
-// 联合应用类型 类型保护区块
+// 索引类型
+let ad1 = {
+    a: 1,
+    b: 2,
+    c: 3
+}
+function getValue(obj: any, keys: string[]) {
+    return keys.map(key => obj[key]);
+}
+function getValueT<T, K extends keyof T > (obj:T, keys: K[]): T[K][] {
+    return keys.map(key => obj[key]);
+}
+console.log(getValue(ad1, ["a", "b", "q"]));
+// console.log(getValueT(ad1, ["a", "b", "q"]));  // 会报错
+
+// 映射类型
+
