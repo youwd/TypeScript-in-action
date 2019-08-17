@@ -14,8 +14,8 @@
   1. es6的模块导入导出
   2. node模块：调试命令`ts-node ./src/modules/node/c.node.ts`
   3. 生产环境的配置
-    - tsconfig.json里"target": "es5",表示要编译的目标版本； "module": "commonjs",要编译成什么样的模块系统
-    - tsc ./src/modules/node/a.node.ts -t es3;  es5:es6
-    - tsc ./src/modules/node/a.node.ts -t es3 -m umd
+   - tsconfig.json里"target": "es5",表示要编译的目标版本； "module": "commonjs",要编译成什么样的模块系统
+   - tsc ./src/modules/node/a.node.ts -t es3;  es5:es6
+   - tsc ./src/modules/node/a.node.ts -t es3 -m umd
 
 
